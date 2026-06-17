@@ -2,8 +2,14 @@ package stepDefinitions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AdminMasterUser {
+import java.time.Duration;
+
+import static stepDefinitions.RandomStringGenerator.randomString;
+
+public class AdminMasterUserPage {
     private WebDriver driver;
     private By userdisplay = new By.ById("userDisplay");
     private By navtitle = new By.ByXPath("//*[@id=\"navbar-collapse\"]/h1");
@@ -15,11 +21,19 @@ public class AdminMasterUser {
     private By roledropdown = new By.ById("branchSelect");
     private By adminoption = new By.ByXPath("//*[@id=\"branchSelect\"]/option[1]");
     private By addsubmitbutton = new By.ById("submitUserBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[1]");
-    public AdminMasterUser(WebDriver d) {
+    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    public AdminMasterUserPage(WebDriver d) {
         this.driver = d;
     }
 
+
+    public By getUserdisplay() {
+        return this.userdisplay;
+    }
+
+    public By getMessageby() {
+        return this.message;
+    }
 
 
     public String getDisplayName() {
@@ -42,12 +56,24 @@ public class AdminMasterUser {
         driver.findElement(namefield).sendKeys(name);
     }
 
+    public void inputName() {
+        inputName(randomString(10));
+    }
+
     public void inputUsername(String s) {
         driver.findElement(usernamefield).sendKeys(s);
     }
 
+    public void inputUsername() {
+        inputUsername(randomString(10));
+    }
+
     public void inputPassword(String s) {
         driver.findElement(passwordfield).sendKeys(s);
+    }
+
+    public void inputPassword() {
+        inputPassword(randomString(10));
     }
 
     public void selectRoleAdmin() {
@@ -57,7 +83,10 @@ public class AdminMasterUser {
     }
 
     public void submitUser() {
-        driver.findElement(addsubmitbutton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(
+                ExpectedConditions.elementToBeClickable(addsubmitbutton)
+        ).click();
     }
 
     public String getMessage() {

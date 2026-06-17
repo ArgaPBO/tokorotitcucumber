@@ -3,13 +3,17 @@ package stepDefinitions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AdminDashboard {
+public class AdminDashboardPage {
     private WebDriver driver;
     private By userdisplay = new By.ById("userDisplay");
     private By navtitle = new By.ByXPath("//*[@id=\"navbar-collapse\"]/h1");
 //    private By errormessage = new By.ByXPath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3/text()");
-    public AdminDashboard(WebDriver d) {
+    public AdminDashboardPage(WebDriver d) {
         this.driver = d;
+    }
+
+    public By getUserdisplay() {
+        return this.userdisplay;
     }
 
 
