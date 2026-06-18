@@ -158,7 +158,7 @@ Terdapat **8 feature file** dengan total **13 scenario**:
 
 **Jalankan semua test:**
 ```bash
-mvn test
+Run Class TestRunner
 ```
 
 ---
