@@ -4,9 +4,9 @@
 
 | No | Nama | Tugas |
 |----|------|-------|
-| 1  | [Arga] | [bertanggung jawab membangun fondasi awal testing serta menyusun materi presentasi  ] |
-| 2  | [Rizwan] | [melanjutkan pengujian untuk beberapa halaman (page) berikutnya sekaligus menyusun PPT] |
-| 3  | [Hisyam] | [menyelesaikan sisa proses testing dan merampungkan materi PPT] |
+| 1  | Arga | bertanggung jawab membangun fondasi awal testing serta menyusun materi presentasi   |
+| 2  | Rizwan | melanjutkan pengujian untuk beberapa halaman (page) berikutnya sekaligus menyusun PPT |
+| 3  | Hisyam | menyelesaikan sisa proses testing dan merampungkan materi PPT |
 
 ---
 
