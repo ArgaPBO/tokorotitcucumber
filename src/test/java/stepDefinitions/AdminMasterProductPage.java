@@ -18,7 +18,9 @@ public class AdminMasterProductPage {
     private By namefield = new By.ById("addProductName");
     private By pricefield = new By.ById("addProductPrice");
     private By addsubmitbutton = new By.ById("saveProductBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
+    private By searchfield = new By.ById("searchProduct");
+    private String lastInputName = "";
     public AdminMasterProductPage(WebDriver d) {
         this.driver = d;
     }
@@ -50,11 +52,27 @@ public class AdminMasterProductPage {
     }
 
     public void inputName(String name) {
+        this.lastInputName = name;
         driver.findElement(namefield).sendKeys(name);
     }
 
     public void inputName() {
         inputName(randomString(10));
+    }
+
+    public String getLastInputName() {
+        return this.lastInputName;
+    }
+
+    public void searchProduct(String name) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(searchfield)).clear();
+        driver.findElement(searchfield).sendKeys(name);
+    }
+
+    public boolean isProductInTable(String name) {
+        By row = new By.ByXPath("//tbody[@id='productTableBody']//td/strong[contains(text(),'" + name + "')]");
+        return !driver.findElements(row).isEmpty();
     }
 
     public void inputPrice(String price) {

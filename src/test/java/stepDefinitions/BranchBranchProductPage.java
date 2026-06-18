@@ -18,7 +18,7 @@ public class BranchBranchProductPage {
     private By namefield = new By.ById("addProductSearch");
     private By pricefield = new By.ById("addBranchPrice");
     private By addsubmitbutton = new By.ById("saveBranchProductBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
     public BranchBranchProductPage(WebDriver d) {
         this.driver = d;
     }
@@ -54,7 +54,7 @@ public class BranchBranchProductPage {
     }
 
     public void inputName() {
-        inputName(randomString(10));
+        inputName("cifon");
     }
 
     public void inputPrice(String price) {

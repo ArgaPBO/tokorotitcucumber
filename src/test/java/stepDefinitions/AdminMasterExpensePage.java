@@ -17,7 +17,7 @@ public class AdminMasterExpensePage {
     private By addexpensebutton = new By.ByXPath("/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[1]/div[2]/button");
     private By namefield = new By.ById("addExpenseName");
     private By addsubmitbutton = new By.ById("saveExpenseBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
     public AdminMasterExpensePage(WebDriver d) {
         this.driver = d;
     }
