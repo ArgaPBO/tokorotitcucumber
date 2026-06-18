@@ -17,7 +17,7 @@ public class AdminMasterBranchPage {
     private By addbranchbutton = new By.ByXPath("/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[1]/div[2]/button");
     private By namefield = new By.ById("addBranchName");
     private By addsubmitbutton = new By.ById("saveBranchBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
     public AdminMasterBranchPage(WebDriver d) {
         this.driver = d;
     }

@@ -21,7 +21,7 @@ public class AdminMasterUserPage {
     private By roledropdown = new By.ById("branchSelect");
     private By adminoption = new By.ByXPath("//*[@id=\"branchSelect\"]/option[1]");
     private By addsubmitbutton = new By.ById("submitUserBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
     public AdminMasterUserPage(WebDriver d) {
         this.driver = d;
     }

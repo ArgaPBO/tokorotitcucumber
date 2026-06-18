@@ -16,7 +16,7 @@ public class BranchProductHistoryPage {
 //    private By usertable = new By.ById("userTableBody");
     private By addproductbutton = new By.ByXPath("/html/body/div[1]/div[1]/div/div/div[1]/div[1]/div[1]/button[1]");
     private By addsubmitbutton = new By.ById("submitSingleBtn");
-    private By message = new By.ByXPath("/html/body/div[1]/div[1]/div/div[contains(@class, 'alert')]");
+    private By message = new By.ByXPath("//div[contains(@class,'alert') and contains(@class,'show')]");
     public BranchProductHistoryPage(WebDriver d) {
         this.driver = d;
     }
