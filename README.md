@@ -1,5 +1,15 @@
 # Tokorotit Cucumber — Automated UI Testing
 
+## Pembagian Tugas
+
+| No | Nama | Tugas |
+|----|------|-------|
+| 1  | [Arga] | [bertanggung jawab membangun fondasi awal testing serta menyusun materi presentasi  ] |
+| 2  | [Rizwan] | [melanjutkan pengujian untuk beberapa halaman (page) berikutnya sekaligus menyusun PPT] |
+| 3  | [Hisyam] | [menyelesaikan sisa proses testing dan merampungkan materi PPT] |
+
+---
+
 ## Penjelasan Singkat SUT (System Under Test)
 
 **Tokorotit** adalah aplikasi web manajemen toko/cabang yang berjalan di `http://127.0.0.1:8000`. Aplikasi ini memiliki dua peran pengguna utama:
@@ -150,3 +160,11 @@ Terdapat **8 feature file** dengan total **13 scenario**:
 ```bash
 mvn test
 ```
+
+---
+
+## Hasil Pengujian
+
+Berikut adalah screenshot bukti bahwa **14 test berhasil** dijalankan:
+
+![Hasil 14 Test Berhasil](img_berhasil/done.png)
